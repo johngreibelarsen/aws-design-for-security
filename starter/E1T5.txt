@@ -1,7 +1,7 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
-Public and private subnets allow all traffic on all ports. Specific and targeted Network ACL rules should be applied to reduce the traffic that can be sent to and from the subnet, that is, CIDR blocks and ports.
+Public and private subnets allow all traffic on all ports. Specific and targeted Network ACL rules should be applied to reduce the traffic that can be sent to and from the subnet, that is, CIDR blocks and ports. By doing so we reduce the options for malicious actions against the infrastructure.
 
 # Poor practice 2
 The use of VPC Endpoint for communicating with S3 should be prefered as it improves security and also increases availability.
