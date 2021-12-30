@@ -3,10 +3,10 @@ Description:  This template deploys ec2 instances for the project starter
 Parameters:
   AmiIdRecipeWebServiceInstance:
     Type: String
-    Default: "ami-0964e67a489e13cdb"
+    Default: "ami-0d37e07bd4ff37148"
   AmiIdAttackInstance:
     Type: String
-    Default: "ami-01fcf79ce78f46764"
+    Default: "ami-0d37e07bd4ff37148"
   KeyPair:
     Type: String
     Description: "Name of an existing KeyPair you will use to access the EC2 instances in this exercise. Be sure you have access to the private key file corresponding to this keypair."
