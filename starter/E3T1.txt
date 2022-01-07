@@ -1,3 +1,10 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
 
+Amazon Guardduty showed 2 findings: 
+- Instance 'Attack Instance - C3' was being used to perform a SSH brute force attack
+- Instance 'Web Service Instance - C3' was being attacked via a SSH brute force attack from above
+
+
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+GuardDuty analyzes and processes data from AWS CloudTrail event logs, VPC Flow Logs, and DNS logs to detect anomalies involving the following AWS resource types: IAM Access Keys, EC2 Instances, and S3. In our case, GuardDuty has used our VPC Flow Logs containing all the flow log records associated with the attack to decide that an attack was happening with a high severity level, that is, 'Attack Instance - C3' is compromised and is actively being used for unauthorised purposes.
