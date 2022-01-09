@@ -1,8 +1,16 @@
-
 # What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+- In exercide 3, Task 3, WAF was used to protect the web application against common threats using managed rules. That is, filter any part of the web request, such as IP addresses, HTTP headers, HTTP body, or URI strings and block common attack patterns, such as SQL injection or cross-site scripting
+- If possible force use of AWS Systems Manager and thereby remove the need for any inbound SSH traffic to the application
+- Any backend logic should happen on instance(s) in the private subnet --> move application server to private subnet 
+
 
 # Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+- No, if the IAM permissions are still insecure then VPC endpoints will not help prevent unauthorized access to the secrets bucket.
+
 
 # Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+- No, applying default encryption does not affect existing objects, that is, they will not be encrypted. Enabling encryption will only encrypt future uploads to that bucket
+
 
 # What would happen if the original cloud formation templates are applied to this environment.
+The remediation steps, configuration changes made, would be overwritten/reset if we approve the change set. I assume that changes made were manually though AWS management console or AWS CLI. All the identified security risks would be back
