@@ -1,5 +1,13 @@
-
-
 # Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
 
-# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+- Disable SSH password login on the application server instance and use AWS Systems Manager Session Manager to provide secure and auditable node management without the need to open inbound ports
+- Update the WebAppSG security group associated with the web application instance to allow connections to port 5000 from the public subnet where the application load balancer is based
+- If we can't use Session Manager and we do need SSH access we can narrow down the CIDR range for port 22, potentially down to a specific IP address by /32 addressing
+
+
+# Neither instance should have had access to the secret recipes bucket, in the event that instance API credentials were compromised how could we have prevented access to sensitive data.
+
+- Use least privilege access.The IAM instance profile associated with the web application server has a permission policy "InstanceRolePolicy-C3" that grants the role full access (*) to all resources of S3. Limit this policy to only have access to the free recipe bucket (and limit actions to what are required)
+ 
+- Enable default server-side encryption on the S3 Bucket. Should be done on both the free recipe and the secret recipe buckets. 
+
