@@ -1,13 +1,35 @@
 # Identify tools that will allow you to do the following:
 
 ## Scan infrastructure as code templates
+- CloudSploit works on Cloudformation templates and perform over 95 checks across over 40 resource types
+- CFRipper Library and CLI tool for analysing CloudFormation templates and check for security compliance.
+- Terrafirma is a Terraform static analysis tool designed for detecting security misconfigurations.
 
 ### Example vulnerability
+- Security groups set to "0.0.0.0/0"
+- Server Side Encryption (SSE) not enabled
+- KMS keys that don't have rotation enabled
+- Access logs not enabled to resources that support it
+
 
 ##Scan AMI’s or containers for OS vulnerabilities
+- AWS Inspector generates findings for the following AWS resources: Amazon EC2 instances, and container images residing in Amazon ECR repositories
+- Amazon ECR image scanning helps in identifying software vulnerabilities in container images. Amazon ECR integrates with Amazon Inspector to provide automated, continuous scanning of your repositories
+- Qualys Cloud Platform paints a single view of the application in terms of security and compliance
 
 ### Example vulnerability
+- Package vulnerability findings identify software packages in your environment that are exposed to common vulnerabilities and exposures (CVEs).
+- Network reachability findings indicate that there are allowed network paths to Amazon EC2 instances in your environment (EC2 only).
+
 
 ##Scan an AWS environment for cloud configuration vulnerabilities
+- AWS Config: A service that enables you to assess, audit, and evaluate the configurations of your AWS resources. Config continuously monitors and records your AWS resource configurations
+- AWS Security Hub is a cloud security posture management service that performs automated, continuous security best practice checks against your AWS resources.
 
 ### Example vulnerability
+- Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 
+- Ensure CloudTrail logs are encrypted at rest
+- Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389
+- EC2 instances should not have a public IPv4 address
+- S3 buckets should have server-side encryption enabled
+
